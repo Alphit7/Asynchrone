@@ -2,6 +2,9 @@ let button = document.querySelector("button");
 let nameInput = document.querySelector("input");
 let countryInput = document.querySelector("select");
 let storedNames = [];
+if (JSON.parse(localStorage.getItem("Names")) === "") {
+  localStorage.setItem("Names", JSON.stringify(storedNames));
+}
 let localNames = JSON.parse(localStorage.getItem("Names"));
 localNames.forEach((element) => {
   storedNames.push(element);
